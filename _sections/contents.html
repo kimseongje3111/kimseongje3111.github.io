@@ -13,7 +13,8 @@ order: 2
         <li><a href="{{ post.url }}">{{ post.title }}</a></li>
       {% endfor %}
     {% else %}
-      {% for post in site.posts offset:postSize | minus:4 %}
+      {% assign start = postSize | minus:4 %}
+      {% for post in site.posts offset:start %}
         <li><a href="{{ post.url }}">{{ post.title }}</a></li>
       {% endfor %}
     {% endif %}
