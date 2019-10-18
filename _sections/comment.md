@@ -1,5 +1,6 @@
 ---
 title: Comment
+auto-header: none
 icon: fa-check
 order: 3
 ---
