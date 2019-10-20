@@ -8,6 +8,12 @@ layout: post
         font-size:12pt;
         margin-bottom:20px;
     }
+	
+	img {
+		margin-left:15px;
+		max-width:100%;
+		heght:auto;
+	}
 </style>
 
 첫 포스트에 앞서 앞으로 대부분 'Java'와 'Spring'을 주로 다룰 예정입니다. 또한 모든 포스트의 주제와 내용은 개인적으로 공부한 것들을 정리하여 올리는 것이기 때문에 다소 미흡한 부분이 있을 수 있습니다.
@@ -27,13 +33,13 @@ layout: post
 
 아래는 ***JVM***의 전체 구조이다.
 
-<img src="{{ 'assets/images/java/memory/java_memory_01.png' | relative_url }}" alt="" style="margin-left:10px;"/>
+<img src="{{ 'assets/images/java/memory/java_memory_01.png' | relative_url }}" alt=""/>
 
 ***JVM***은 크게 ***Class Loader, Execution Engine, Runtime Data Area***으로 구성되어 있다. 차례로 하나씩 살펴보자.
 
 - ***Class Loader***
 
-<img src="{{ 'assets/images/java/memory/java_memory_02.png' | relative_url }}" alt="" style="margin-left:10px;"/>
+<img src="{{ 'assets/images/java/memory/java_memory_02.png' | relative_url }}" alt=""/>
 
 우선 기본적으로 Java 개발 툴(ex. Eclipse)에서 작성된 Java 코드는 .java 파일로 저장된다. 그 후 Java 파일의 빌드가 이루어지면 Java 컴파일러는 javac라는 명령어를 통해 .class 파일을 생성한다.
 .class 파일은 바이트코드(Byte Code, 반기계어)이기 때문에 OS에서 바로 실행될 수 없다. 그래서 ***JVM***은 OS가 해당 바이트코드를 이해할 수 있도록 해석해주는 역할을 한다.
@@ -41,7 +47,7 @@ layout: post
 
 - ***Execution Engine***
 
-<img src="{{ 'assets/images/java/memory/java_memory_08.png' | relative_url }}" alt="" style="margin-left:10px;"/>
+<img src="{{ 'assets/images/java/memory/java_memory_08.png' | relative_url }}" alt=""/>
 
 그다음 ***JVM*** 내 로드된 바이트코드는 ***Execution Engine***에 의해 기계어로 해석되어 메모리 상(Runtime Data Area)에 배치된다. ***Execution Engine***은 인터프리터(Interpreter)와 ***JIT(Just In Time)***컴파일러(Compiler)로 구성되어 있다.
 앞서 말한 코드가 ***JVM***을 통해 해석되기 때문에 OS으로부터 직접 제어 받는 방식보다 속도 면에서 느리다는 단점을 보완하기 위해 ***JIT*** 컴파일러가 존재한다.
@@ -54,7 +60,7 @@ layout: post
 
 ***JVM***이 프로그램을 실행하기 위해 OS로부터 할당받은 메모리 공간으로 크게 5가지로 나뉜다.
 
-<img src="{{ 'assets/images/java/memory/java_memory_03.png' | relative_url }}" alt="" style="margin-left:10px;"/>
+<img src="{{ 'assets/images/java/memory/java_memory_03.png' | relative_url }}" alt=""/>
 
 ***1. Method Area***
 
@@ -83,7 +89,7 @@ Java 외 다른 언어의 함수 호출(예: C/C++의 메서드)를 위해 할�
 
 - 그림 참조
 
-<img src="{{ 'assets/images/java/memory/java_memory_05.png' | relative_url }}" alt="" style="margin-left:10px;"/>
+<img src="{{ 'assets/images/java/memory/java_memory_05.png' | relative_url }}" alt=""/>
 
 ## Stack 과 Heap
 ---
