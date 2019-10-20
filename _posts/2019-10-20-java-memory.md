@@ -6,12 +6,13 @@ layout: post
 <style>
     blockquote {
         font-size:12pt;
-		padding-bottom:0.5px;
-        margin-bottom:20px;
+		padding-bottom:0.1px;
+        margin-bottom:40px;
     }
 	
 	img {
 		margin-left:15px;
+		margin-right:15px;
 		max-width:100%;
 		heght:auto;
 	}
@@ -69,7 +70,7 @@ layout: post
 > 상수풀(Constant Pool) : Type에서 사용된 상수들을 저장하는 곳이다. 상수의 중복이 생기면 기존의 상수를 사용한다.
 예를 들면 String Type의 상수에 대해 직접 new를 이용하여 객체를 생성하지 않고 "" 으로 생성한 두 변수의 상수값이 같다면 같은 주솟값을 가진다.
 그 외 final class 변수들도 상수 풀에 값을 복사한다.    
-(ex. String s1 = "hello",  String s2 = "hello"  ---->  s1과 s2는 같은 주솟값을 가진다.)
+(Ex. String s1 = "hello",  String s2 = "hello"  ---->  s1과 s2는 같은 주솟값을 가진다.)
 
 ***2. Stack Area***
 
