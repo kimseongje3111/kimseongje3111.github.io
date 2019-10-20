@@ -24,7 +24,7 @@ layout: post
 
 JVM은 크게 Class Loader, Execution Engine, Runtime Data Area 3가지로 구성되어 있다. 하나씩 살펴보자.
 
->Class Loader
+- Class Loader
 
 <img src="{{ 'assets/images/java/memory/java_memory_02.png' | relative_url }}" alt="" />
 
@@ -32,7 +32,7 @@ JVM은 크게 Class Loader, Execution Engine, Runtime Data Area 3가지로 구�
 .class 파일은 바이트코드(반기계어)이기 때문에 OS에서 바로 실행될 수 없다. 그래서 JVM은 OS가 해당 바이트코드를 이해할 수 있도록 해석해주는 역할을 한다.
 이제 런타임 시점이 되면 Class Loader에 의해 JVM 내부에 로드된다.
 
->Execution Engine
+- Execution Engine
 
 <img src="{{ 'assets/images/java/memory/java_memory_03.png' | relative_url }}" alt="" />
 
@@ -42,6 +42,6 @@ JVM은 크게 Class Loader, Execution Engine, Runtime Data Area 3가지로 구�
 JIT 컴파일러에 의해 해석된 코드는 캐시에 보관되기 때문에 한번 컴파일 된 후에는 빠르게 수행된다. 하지만 이를 변환하는데 인터프리터 방식보다 훨씬 오래걸린다는 비용이 발생하게 된다.
 이러한 이유로 Execution Engine은 인터프리터 방식으로 실행하다가 적절한 시점에 JIT 컴파일러 방식을 선택한다. 예를들어 한번만 실행되는 코드는 인터프리터 방식을 사용하는 것이 유리하다.
 
->Runtime Data Area
+- Runtime Data Area
 
 <img src="{{ 'assets/images/java/memory/java_memory_08.png' | relative_url }}" alt="" />
