@@ -6,6 +6,7 @@ layout: post
 <style>
     blockquote {
         font-size:12pt;
+		padding-bottom:0.5px;
         margin-bottom:20px;
     }
 	
@@ -47,7 +48,7 @@ layout: post
 
 - ***Execution Engine***
 
-<img src="{{ 'assets/images/java/memory/java_memory_08.png' | relative_url }}" alt=""/>
+<img src="{{ 'assets/images/java/memory/java_memory_03.png' | relative_url }}" alt=""/>
 
 그다음 ***JVM*** 내 로드된 바이트코드는 ***Execution Engine***에 의해 기계어로 해석되어 메모리 상(Runtime Data Area)에 배치된다. ***Execution Engine***은 인터프리터(Interpreter)와 ***JIT(Just In Time)***컴파일러(Compiler)로 구성되어 있다.
 앞서 말한 코드가 ***JVM***을 통해 해석되기 때문에 OS으로부터 직접 제어 받는 방식보다 속도 면에서 느리다는 단점을 보완하기 위해 ***JIT*** 컴파일러가 존재한다.
@@ -60,7 +61,7 @@ layout: post
 
 ***JVM***이 프로그램을 실행하기 위해 OS로부터 할당받은 메모리 공간으로 크게 5가지로 나뉜다.
 
-<img src="{{ 'assets/images/java/memory/java_memory_03.png' | relative_url }}" alt=""/>
+<img src="{{ 'assets/images/java/memory/java_memory_04.png' | relative_url }}" alt=""/>
 
 ***1. Method Area***
 
