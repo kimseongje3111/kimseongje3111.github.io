@@ -11,7 +11,7 @@ order: 2
 		border-bottom:1px dashed black;	
 	}
 	
-  	li {
+  	.Contents {
 		text-align:left;
 		padding-left:20px;
 	}
@@ -22,7 +22,7 @@ order: 2
   <h2 id="ContentHeader">최근 글</h2><br>
   <ul>
     {% for post in site.posts limit:5 %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        <li class="Contents"><a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
 </header>
