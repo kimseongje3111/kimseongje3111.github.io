@@ -3,14 +3,12 @@ title: "[JAVA] Java 메모리 구조"
 author: Seongje kim
 layout: post
 ---
-<head>
-    <style>
-        blockquote {
-            font-size:10pt;
-            margin-bottom:10px;
-        }
-    </style>
-<head>
+<style>
+    blockquote {
+        font-size:10pt;
+        margin-bottom:10px;
+    }
+</style>
 
 첫 포스트에 앞서 앞으로 대부분 'Java'와 'Spring'을 주로 다룰 예정입니다. 또한 모든 포스트의 주제와 내용은 개인적으로 공부한 것들을 정리하여 올리는 것이기 때문에 다소 미흡한 부분이 있을 수 있습니다.
 
