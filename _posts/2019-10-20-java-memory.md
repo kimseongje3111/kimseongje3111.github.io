@@ -9,7 +9,7 @@ layout: post
 		padding-bottom:0.1px;
         margin-bottom:40px;
     }
-	
+
 	img {
 		margin-left:15px;
 		margin-right:30px;
@@ -18,9 +18,9 @@ layout: post
 	}
 </style>
 
-첫 포스트에 앞서 앞으로 대부분 'Java'와 'Spring'을 주로 다룰 예정입니다. 또한 모든 포스트의 주제와 내용은 개인적으로 공부한 것들을 정리하여 올리는 것이기 때문에 다소 미흡한 부분이 있을 수 있습니다.
+첫 포스트에 앞서 앞으로 대부분 'Java'와 'Spring'을 주로 다룰 예정입니다. 또한 모든 포스트의 주제와 내용은 개인적으로 공부한 것들을 정리하여 올리는 것이기 때문에 다소 미흡한 부분이 있을 수 있고, 설명은 내용을 기술하는 방식으로 진행할 예정입니다.
 
-첫 포스트의 주제는 Java 의 메모리 구조에 대한 기본적인 내용입니다.
+첫 포스트의 주제는 Java 의 메모리 구조에 대한 기본적인 내용이다.
 
 ## Java 의 메모리 구조 및 컴파일 과정
 ---
@@ -95,6 +95,7 @@ Java 외 다른 언어의 함수 호출(예: C/C++의 메서드)를 위해 할�
 
 ## Code
 ---
+
 이제 직접 코드를 통해서 Stack과 Heap의 개념과 추가적으로 상수플, 불변 객체(Inmmutable Object)에 대해 확인해보자. 아래는 직접 작성한 코드이다.
 
 ```
@@ -135,6 +136,9 @@ private static void IncreaseIntegerValue(Integer parm) {
 불변 객체란 말 그대로 변경이 불가한 객체를 말한다. 힙 영역에 할당된 객체를 변경할 수 없다는 말과 같다.
 대표적으로 불변 클래스들에는 String, Boolean, Integer, Float, Long 등 타입 관련 클래스들이 있다.
 
+> 불변 객체는 변경이 불가한 특징 덕분에 멀티스레드 환경에서 Thread-safe을 보장한다는 장점을 가진다.
+하지만 객체의 값을 변경할 때마다 새로운 객체를 생성해야 하기 때문에 추가적인 비용이 발생하고 메모리 누수와 같은 성능저하를 발생 시킬 수 있다.
+
 그렇지만 우리는 불변 객체인 변수 inmmutable1, parm의 값을 변경하거나 연산할 수 있는것을 알고있다.
 하지만 이는 변경되는것 처럼 보이더라도 실제 메모리(힙 영역)에 새로운 객체가 할당되는것이며 기존의 값은 변경되는 않는다.
 이제 위 코드 결과의 이유를 설명할 수 있을것이다. 변수 parm을 증가시키면 힙 영역에 새로운 값 30이 할당되고 기존 스택 영역에 할당되었던 변수 parm은 그 새로운 값을 참조한다.
@@ -173,5 +177,43 @@ public static void main(String[] args) {
 
 <img src="{{ 'assets/images/java/memory/java_memory_09.PNG' | relative_url }}" alt=""/>
 
-## Garbage Collector
+[전체 코드](https://github.com/kimseongje3111/ExampleCode/blob/master/Java/Post1_01.java)
+
+## Garbage Collection/Collecor(GC)
 ---
+
+마지막으로 ***GC***에 대해 알아볼 것이다. 하지만 이번 포스트에서는 간단한 과정만을 설명하고 이후 다른 포스트에서 ***GC***의 주제로 구체적인 개념과 과정을 다시 다루도록 하겠다.
+
+우선 ***GC***의 개념을 알아보자.
+
+앞서 말했듯이 ***JVM***의 힙 영역에는 객체들이 할당된다. 각각의 객체마다 메모리를 점유하고 있는것이다.
+하지만 그 객체가 필요하지 않음에도 불구하고 메모리를 점유하고 있다면 메모리측면에서의 자원 손실과 심각한 성능 저하를 유발할 것이다. Java에서는 이와 같이 더이상 필요가 없어진 객체를 쓰레기로 분류한다.
+
+그렇다면 누군가가 이러한 쓰레기 객체들을 처리하여 메모리 손실을 방지해야한다.
+바로 Java의 ***GC***가 ***JVM***의 힙 영역에 대한 메모리 관리자로서의 역할을 수행한다.
+결과적으로 ***GC***의 주요 업무는 효과적으로 힙 영역의 쓰레기 객체들을 찾아서 처리하는 것이다.
+
+<img src="{{ 'assets/images/java/memory/java_memory_06.png' | relative_url }}" alt=""/>
+
+***GC***는 Unreachable Object를 우선적으로 메모리에서 제거하여 메모리 공간을 확보한다.
+Unreachable Object란 스택 영역에서 도달할 수 없는 힙 영역의 객체이다. 이 과정은 ***Mark and Sweep***이라고도 한다.
+***Mark***는 ***GC***가 스택 영역의 모든 변수를 스캔하면서 각각 어떤 객체를 참조하고 있는지 찾는 과정이다. 이 작업을 위해 모든 스레드는 일시 중단되는데 이를 ***Stop the world***라고 부르기도 한다. 그리고 ***Sweep***은 ***Marking*** 되어있지 않은 모든 객체들을 힙 영역에서 제거하는 과정이다.
+
+아래는 GC의 간단한 과정을 설명하기 위해 구성요소들을 표현한 것이다.
+
+<img src="{{ 'assets/images/java/memory/java_memory_07.png' | relative_url }}" alt=""/>
+
+1. 새로운 객체는 ***Eden*** 영역에 할당된다. ***Survivor Space***는 비워진 상태로 시작한다.
+2. ***Eden*** 영역이 가득 차면 ***Minor GC***가 발생한다.
+3. 최초에 ***Minor GC***가 발생하면 ***Reachable Object***들은 ***S0(Survival 0)***으로 옮겨진다. 이 때, ***Unreachable Object***들은 ***Eden*** 영역이 비워짐과 동시에 메모리에서 제거된다.
+4. 다음 ***Minor GC*** 발생 시 ***Eden*** 영역은 3번과 똑같은 과정을 수행한다. 기존에 ***S0***에 있었던 객체들 중 살아남은 객체들은 ***S1(Survival 1)***으로 옮겨지며 이때, 각 객체들의 ***Age*** 값이 증가되어 옮겨진다. ***S1***으로 모두 옮겨지면 ***Eden***과 ***S0*** 영역은 비워진다.
+5. 다음 ***Minor GC*** 발생 시 4번 과정과 반대로 가득 차있던 ***S1***에서 살아남은 객체들은 ***S0***로 옮겨지면서 ***Eden***과 ***S1*** 영역이 비워진다. 마찬가지로 ***Age*** 값이 증가되어 옮겨진다.
+6. 4,5번 과정을 반복하면서 ***Young Generation***에서 계속해서 살아남으며 ***Age*** 값이 증가하는 객체들은 ***Age*** 값이 특정 이상이 되면 ***Old Generation***으로 옮겨지는데 이 단계를 ***Promotion***이라고 한다. ***Minor GC***가 반복되면 ***Promotion***도 계속 발생한다.
+7. ***Promotion*** 작업이 반복되면서 ***Old Generation***이 가득 차게 되면 ***Major GC***가 발생한다.
+8. ***Major GC*** 발생 시 ***Old Generation***의 모든 객체들을 검사하여 ***Unreachable Object***들을 한꺼번에 제거한다. 이때, ***GC***를 실행하는 스레드를 제외한 모든 스레드는 일시적으로 작업을 멈추게 되고 비교적으로 ***Minor GC***보다 시간이 오래걸리게 된다.
+
+이것으로 이번 포스트를 마무리하겠습니다. 감사합니다.
+
+- 그림/내용 참조  
+[사이트 1](https://aljjabaegi.tistory.com/387)  
+[사이트 2](https://yaboong.github.io/java/2018/06/09/java-garbage-collection/)
