@@ -144,7 +144,7 @@ private static void IncreaseIntegerValue(Integer parm) {
 
 아래는 코드 실행 결과이다.
 
-<img src="{{ 'assets/images/java/memory/java_memory_08.png' | relative_url }}" alt=""/>
+<img src="{{ 'assets/images/java/memory/java_memory_08.PNG' | relative_url }}" alt=""/>
 
 추가적으로 상수풀의 존재도 확인해보았다.
 
@@ -171,7 +171,7 @@ public static void main(String[] args) {
 
 아래는 코드 실행 결과이다.
 
-<img src="{{ 'assets/images/java/memory/java_memory_09.png' | relative_url }}" alt=""/>
+<img src="{{ 'assets/images/java/memory/java_memory_09.PNG' | relative_url }}" alt=""/>
 
 ## Garbage Collector
 ---
