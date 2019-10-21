@@ -12,7 +12,7 @@ layout: post
 	
 	img {
 		margin-left:15px;
-		margin-right:15px;
+		margin-right:30px;
 		max-width:100%;
 		heght:auto;
 	}
@@ -93,8 +93,85 @@ Java 외 다른 언어의 함수 호출(예: C/C++의 메서드)를 위해 할�
 
 <img src="{{ 'assets/images/java/memory/java_memory_05.png' | relative_url }}" alt=""/>
 
-## Stack 과 Heap
+## Code
 ---
+이제 직접 코드를 통해서 Stack과 Heap의 개념과 추가적으로 상수플, 불변 객체(Inmmutable Object)에 대해 확인해보자. 아래는 직접 작성한 코드이다.
+
+```
+public static void main(String[] args) {
+    Integer inmmutable1 = 10;
+
+    System.out.println("Before Function Call (Value): " + inmmutable1);
+    System.out.println("Before Function Call (Address): " + inmmutable1.hashCode());
+    System.out.println("--------------In Function--------------");
+
+    IncreaseIntegerValue(inmmutable1);
+
+    System.out.println("--------------Out Function--------------");
+    System.out.println("After Function Call (Value): " + inmmutable1);
+    System.out.println("After Function Call (Address): " + inmmutable1.hashCode());
+}
+
+private static void IncreaseIntegerValue(Integer parm) {
+    System.out.println("Before Calculation (Parmeter Address):" + parm.hashCode());
+
+    parm += 20;
+
+    System.out.println("After Calculation (Parmeter Address):" + parm.hashCode());
+}
+```
+
+우선 코드를 보면 Integer 타입의 객체를 매개변수로 받고 값을 20 증가시키는 메서드 IncreaseIntegerValue를 호출하는 간단한 코드이다.
+그리고 Integer 타입의 변수 inmmutable1에 대해 메서드를 호출하기 전, 실행 중, 실행 후의 값과 주솟값을 확인하기 위한 출력문이 포함되어 있다.
+설명에 앞서 기본적으로 Java의 hashCode()는 객체의 주솟값을 이용하여 해시코드를 생성한다.
+
+처음에 Integer는 Object 타입이므로 힙 영역에 값 10이 할당되고 그 값을 참조하는 변수 inmmutable1가 스택 영역에 할당된다.
+메서드를 호출하게 되면 매개변수 parm에게 복사된 참조 변수(주솟값)를 넘겨주고 스택 영역에 해당 메서드의 새로운 프레임이 추가된다.
+그다음 변수 parm은 스택 영역에 할당되어 변수 inmmutable1이 참조하는 주소를 똑같이 참조하게 된다.
+이제 연산에 의해 변수 parm의 값을 20 증가시키면 inmmutable1의 값이 변하는가? 답은 당연히 변하지 않는다.
+
+그 이유는 무엇일까? 이 질문을 답하기 위해서는 불변 객체의 개념을 알아야 한다.
+불변 객체는 불변 클래스로부터 생성된다. 불변 클래스들은 참조 타입이기 때문에 그 객체들은 힙 영역에 생성된다.
+불변 객체란 말 그대로 변경이 불가한 객체를 말한다. 힙 영역에 할당된 객체를 변경할 수 없다는 말과 같다.
+대표적으로 불변 클래스들에는 String, Boolean, Integer, Float, Long 등 타입 관련 클래스들이 있다.
+
+그렇지만 우리는 불변 객체인 변수 inmmutable1, parm의 값을 변경하거나 연산할 수 있는것을 알고있다.
+하지만 이는 변경되는것 처럼 보이더라도 실제 메모리(힙 영역)에 새로운 객체가 할당되는것이며 기존의 값은 변경되는 않는다.
+이제 위 코드 결과의 이유를 설명할 수 있을것이다. 변수 parm을 증가시키면 힙 영역에 새로운 값 30이 할당되고 기존 스택 영역에 할당되었던 변수 parm은 그 새로운 값을 참조한다.
+그 결과 inmmutable1의 값과 주솟값은 그대로 유지될 수 있는 것이다.
+
+그 후 메서드가 종료되면 해당 프레임이 제거되면서 스택에 있었던 parm은 더 이상 힙 영역의 30을 참조하지 않는 상태가 된다. 이것은 Garbage로 분류된다.
+
+아래는 코드 실행 결과이다.
+
+<img src="{{ 'assets/images/java/memory/java_memory_08.png' | relative_url }}" alt=""/>
+
+추가적으로 상수풀의 존재도 확인해보았다.
+
+```
+public static void main(String[] args) {
+    String inmmutable2 = "hello";
+    String constantPool = "hello";
+
+    System.out.println("Before Change Value (Address): " + inmmutable2.hashCode());
+    System.out.println("Before Change Value (Constant): " + constantPool.hashCode());
+
+    inmmutable2 = "bye";
+    constantPool = "bye";
+
+    System.out.println("After Change Value (Address): " + inmmutable2.hashCode());
+    System.out.println("Before Change Value (Constant): " + constantPool.hashCode());
+}
+```
+
+앞서 설명했듯이 String 객체는 불변 객체이므로 변수 inmmutable2의 값을 hello에서 bye로 변경하면 새로운 객체가 할당된다.
+때문에 당연히 변경 전과 후의 변수 inmmutable2의 주솟값은 다르게 나올 것이다.
+또한 상수풀을 통해 상수의 중복이 생기면 기존의 상수를 사용한다고 설명하였다.
+그렇다면 변수 constantPool의 주솟값을 쉽게 예상해 볼 수 있을것이다.
+
+아래는 코드 실행 결과이다.
+
+<img src="{{ 'assets/images/java/memory/java_memory_09.png' | relative_url }}" alt=""/>
 
 ## Garbage Collector
 ---
