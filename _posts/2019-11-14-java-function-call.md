@@ -29,7 +29,7 @@ layout: post
 ***1. 값에 의한 전달 (Call By Value)***
 ***2. 참조에 의한 전달 (Call By Reference)***
 
-##Call By Value 와 Call By Reference
+## Call By Value 와 Call By Reference
 ---
 
 - ***Call By Value***
@@ -57,7 +57,7 @@ layout: post
 결과적으로 ***Call By Reference*** 방식을 따르기 때문에 ***Swap*** 함수 내부에서 x, y의 값을 교환하는 것은 x, y가 참조하는 주소의 실제 값이 교환되는 것이다.
 따라서 동일한 주소를 참조하는 원래의 변수 a, b의 값도 교환되는 결과를 보여준다.
 
-##Java에서의 함수(메서드) 호출
+## Java에서의 함수(메서드) 호출
 ---
 
 Java는 기본적으로 ***Call By Value*** 방식을 따른다.
