@@ -1,5 +1,5 @@
 ---
-title: "[JAVA] Java 함수 호출 및 인자 전달 방식"
+title: "[JAVA] 함수 호출 및 인자 전달"
 author: Seongje kim
 layout: post
 ---
