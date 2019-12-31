@@ -137,7 +137,7 @@ Java에서는 메서드 내에서 매개 변수가 참조하는 주솟값을 변
 
 <img src="{{ 'assets/images/java/function_call/function_call_03.PNG' | relative_url }}" alt=""/>
 
-[전체 코드](https://github.com/kimseongje3111/ExampleCode/blob/master/Java/Post2_01.java)
+[전체 코드](https://github.com/kimseongje3111/ExampleCode/tree/master/Java/Post2)
 
 이번 포스트에서는 Java의 함수 호출 및 인자 전달 방식에 대해 알아보았습니다.
 사실 프로그래밍 언어의 함수 호출 및 인자 전달 방식을 구분하기 위해 'Java는 Call By Reference 방식이 아닌 Call By Value 방식을 따른다.'라는 결론을 내렸지만 포괄적으로 본다면 참조 타입 변수를 ***Call By Reference***으로 볼 수 있는 측면이 있을 수 있다고 생각합니다.
