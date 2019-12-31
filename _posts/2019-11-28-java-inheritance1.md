@@ -1,5 +1,5 @@
 ---
-title: "[JAVA] Inheritance"
+title: "[JAVA] Inheritance 1"
 author: Seongje kim
 layout: post
 ---
