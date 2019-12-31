@@ -18,7 +18,7 @@ layout: post
 	}
 </style>
 
-이번 포스트의 주제는 Java 상속(Inheritance)에 대한 내용입니다. 이다음 포스트에서 다룰 추상 클래스와 인터페이스에 대한 이해를 돕기 위한 내용입니다.
+이번 포스트의 주제는 Java 상속에 대한 내용입니다. 이다음 포스트에서 다룰 추상 클래스와 인터페이스에 대한 이해를 돕기 위한 내용입니다.
 
 ## 상속(Inheritance)의 개념 및 특징
 ---
@@ -211,7 +211,7 @@ manager3.getWorkingYears();   // 컴파일 에러
 그 이유는 Employee 타입이기 때문이다. 하위 클래스에 대해 참조는 가능하지만 멤버에는 접근이 불가능하다.
 하위 클래스의 객체가 마치 상위 클래스인 것처럼 동작하는 것이다.
 
-무엇인가 이상하다고 느낄 것이다. 그럼 이 기능이 필요한 이유가 무엇일까라는 생각이 든다.
+무엇인가 이상하다고 느낄 것이다. 그럼 이 기능이 필요한 이유가 무엇일까라는 생각이 든다.  
 이를 설명하기 전에 다시 코드를 보자.
 
 ```
@@ -235,7 +235,7 @@ intern3.ChangeInfo(21);
 그때, 각각 Manager, Intern 객체가 ChangeInfo 메서드를 호출한다면 어떻게 동작하는가?
 
 당연하지만 Manager 클래스는 메서드를 오버라이딩했기 때문에 Manager 객체의 workingYears 변수가 변경된다.
-그와 반대로 Intern 클래스는 상위 클래스인 Employee의 메서드를 사용하기 때문에 Not Available이 출력된다.
+그와 반대로 Intern 클래스는 상위 클래스인 Employee의 메서드를 사용하기 때문에 'Not Available'이 출력된다.
 동일한 조작이지만 다르게 동작하는것을 볼 수 있다. 이처럼 메서드 오버라이딩은 다형성을 보여주는 적절한 예이다.
 
 그렇지만 메서드 오버라이딩은 굳이 객체의 자료형 상위 클래스 타입일 필요가 없다.
@@ -285,6 +285,6 @@ Manager 객체와 Intern 객체는 동일한 Employee 타입이지만 호출하�
 감사합니다.
 
 - 그림/내용 참조
-[사이트 1](https://opentutorials.org/module/516/6127)
-[사이트 2](https://wikidocs.net/280)
+[사이트 1](https://opentutorials.org/module/516/6127)  
+[사이트 2](https://wikidocs.net/280)  
 [사이트 3](https://docs.oracle.com/javase/8/docs/api/)
