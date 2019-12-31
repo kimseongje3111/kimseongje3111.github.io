@@ -284,7 +284,7 @@ Manager 객체와 Intern 객체는 동일한 Employee 타입이지만 호출하�
 이것으로 설명을 마치고 다음 포스트에서 이번 포스트의 내용을 바탕으로 인터페이스와 추상 클래스에 대해 다루겠습니다.
 감사합니다.
 
-- 그림/내용 참조
+- 그림/내용 참조  
 [사이트 1](https://opentutorials.org/module/516/6127)  
 [사이트 2](https://wikidocs.net/280)  
 [사이트 3](https://docs.oracle.com/javase/8/docs/api/)
