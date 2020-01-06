@@ -1,3 +1,3 @@
 # My development blog
 
-[Blog's Link is Here](kimseongje3111.github.io)
+[Here is my Blog's Link](kimseongje3111.github.io)
