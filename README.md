@@ -1,2 +1,3 @@
-# kimseongje3111.github.io
-My development blog
+# My development blog
+
+[Blog's Link is Here](kimseongje3111.github.io)
