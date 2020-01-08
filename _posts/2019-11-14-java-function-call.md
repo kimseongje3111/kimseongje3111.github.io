@@ -124,7 +124,7 @@ private static void callByValue2(Animal animal) {
 
 Animal 클래스 타입의 매개 변수를 받는 메서드 callByValue1과 callByValue2는 각각 다른 동작을 수행한다.
 첫 번째 callByValue1는 매개 변수 animal를 참조하여 해당 객체의 이름과 성별을 변경한다.
-두 번째 callByValue2 또한 매개 변수 animal에 대해 이름과 성별을 변경하지만 new를 통해 객체를 재할당해준다. 이는 매개 변수 animal이 참조하는 주솟값을 변경하는 행위이다.
+두 번째 callByValue2 또한 매개 변수 animal에 대해 이름과 성별을 변경하지만 ***new***를 통해 객체를 재할당해준다. 이는 매개 변수 animal이 참조하는 주솟값을 변경하는 행위이다.
 
 그렇다면 Animal 객체 'dog'와 'cat'을 인자로 전달하여 각각 위 두개의 메서드 callByValue1과 callByValue2를 호출했을 때 어떤 차이점이 존재할까?
 
@@ -139,7 +139,9 @@ Java에서는 메서드 내에서 매개 변수가 참조하는 주솟값을 변
 
 [예제 코드](https://github.com/kimseongje3111/ExampleCode/tree/master/Java/Java_02)
 
+***
+
 이번 포스트에서는 Java의 함수 호출 및 인자 전달 방식에 대해 알아보았습니다.
-사실 프로그래밍 언어의 함수 호출 및 인자 전달 방식을 구분하기 위해 'Java는 Call By Reference 방식이 아닌 Call By Value 방식을 따른다.'라는 결론을 내렸지만 포괄적으로 본다면 참조 타입 변수를 ***Call By Reference***으로 볼 수 있는 측면이 있을 수 있다고 생각합니다.
+사실 프로그래밍 언어의 함수 호출 및 인자 전달 방식을 구분하기 위해 'Java는 ***Call By Reference*** 방식이 아닌 ***Call By Value*** 방식을 따른다.'라는 결론을 내렸지만 포괄적으로 본다면 참조 타입 변수를 ***Call By Reference***으로 볼 수 있는 측면이 있을 수 있다고 생각합니다.
 그래서 Java의 함수 호출 및 인자 전달 방식이 ***Call By Value*** 인지 ***Call By Reference*** 인지 구분하기보다 Java의 함수 호출 및 인자 전달 방식과 동작 그 자체를 이해하는 것이 더 중요하다고 생각됩니다.
 이것으로 포스트를 마무리하겠습니다. 감사합니다.
