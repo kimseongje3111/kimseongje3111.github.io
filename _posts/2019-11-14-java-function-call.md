@@ -1,5 +1,5 @@
 ---
-title: "[JAVA] 함수 호출 및 인자 전달"
+title: "[JAVA] Function call"
 author: Seongje kim
 layout: post
 ---

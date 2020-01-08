@@ -1,5 +1,5 @@
 ---
-title: "[JAVA] 메모리 구조"
+title: "[JAVA] Memory structure"
 author: Seongje kim
 layout: post
 ---
