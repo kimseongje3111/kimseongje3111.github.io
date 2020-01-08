@@ -177,7 +177,7 @@ public static void main(String[] args) {
 
 <img src="{{ 'assets/images/java/memory/java_memory_09.PNG' | relative_url }}" alt=""/>
 
-[전체 코드](https://github.com/kimseongje3111/ExampleCode/tree/master/Java/Post1)
+[예제 코드](https://github.com/kimseongje3111/ExampleCode/tree/master/Java/Java_01)
 
 ## Garbage Collection/Collecor(GC)
 ---

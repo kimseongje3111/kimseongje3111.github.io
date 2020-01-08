@@ -279,7 +279,7 @@ Manager 객체와 Intern 객체는 동일한 Employee 타입이지만 호출하�
 결과적으로 이는 코드의 가시성 향상과 관련이 있다.
 참고했던 글을 인용하자면 '우아한 코딩'을 할 수 있는 것이다.
 
-[전체 코드](https://github.com/kimseongje3111/ExampleCode/tree/master/Java/Post3)
+[예제 코드](https://github.com/kimseongje3111/ExampleCode/tree/master/Java/Java_03)
 
 이것으로 설명을 마치고 다음 포스트에서 이번 포스트의 내용을 바탕으로 인터페이스와 추상 클래스에 대해 다루겠습니다.
 감사합니다.
