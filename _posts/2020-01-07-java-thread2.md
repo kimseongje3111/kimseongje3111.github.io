@@ -61,7 +61,7 @@ layout: post
 하지만 멀티 스레드가 장점만 가지는 것은 아니다.
 여러 스레드가 한 프로세스 내에서 자원을 공유하면서 작업을 하기 때문에 주의 깊은 설계가 필요하다.
 
- 안전성 위해 요소
+- 안전성 위해 요소
 
 잘못 설계된 멀티 스레드 프로그램은 타이밍에 따라서 정확한 동작을 보장하지 못한다.
 스레드는 서로 같은 메모리 주소 공간과 자원을 공유하면서 실행되기 때문에 예상치 못한 문제가 발생할 수 있다.
@@ -225,7 +225,7 @@ Callable<T> task = new Callable<T>() {
 예제의 내용은 아래와 같다.
 
 1. 테스트 : Facebook과 Twitter의 타임라인 데이터들을 동시에 요청하여 두 타임라인 데이터를 날짜별로 정렬하여 병합한다.  
-2. 전재 : 두 스레드의 공유 데이터는 동기화되며, 데이터 요청과 병합은 ***sleep()***으로 대체한다.
+2. 전제 : 두 스레드의 공유 데이터는 동기화되며, 데이터 요청과 병합은 ***sleep()***으로 대체한다.
 
 우선 스레드 생성 방법에 따른 차이를 비교하기 위해 먼저 Thread 클래스 상속 방법을 보자.
 
@@ -248,7 +248,7 @@ public class fbThread extends Thread {
 }
 ```
 
-Facebook 타임라인 데이터들을 요청하는 fbThread 클래스는 ***Thread*** 클래스를 상속받아 구현된다.
+Facebook 타임라인 데이터들을 요청하는 fbThread 클래스는 ***Thread*** 클래스를 상속받아 구현하였다.  
 위 구현 방법과 동일하게 Twitter 타임라인 데이터들을 요청하는 twThread 클래스를 생성한다.
 
 Facebook은 데이터 한개에 대한 응답이 0.05 초이며, 총 300개를 요청한다고 가정한다.  
@@ -273,7 +273,7 @@ public class Main {
 }
 ```
 
-메인에서 Facebook과 Twitter 데이터 요청을 위한 각각의 스레드를 생성하고 실행하며 이후 두 데이터를 병합한다.
+메인에서 Facebook과 Twitter 데이터 요청을 위한 각각의 스레드를 생성하고 실행하며 이후 두 데이터를 병합한다.  
 하지만 위 방법은 문제점이 존재한다.
 
 <img src="{{ 'assets/images/java/thread/java_thread_06.PNG' | relative_url }}" alt=""/>
@@ -305,7 +305,7 @@ public class fbCallable implements Callable<List<String>> {
 }
 ```
 
-조건은 동일하며 Facebook, Twitter 데이터 요청 작업을 위한 스레드는 ***Callable*** 인터페이스로 구현된다.
+조건은 동일하며 Facebook, Twitter 데이터 요청 작업을 위한 스레드는 ***Callable*** 인터페이스로 구현된다.  
 리턴 값은 리스트 형태의 전체 타임라인 데이터이다.
 
 ```
@@ -360,7 +360,7 @@ public static void main(String[] args) {    // 출력문 생략 ...
 
 <img src="{{ 'assets/images/java/thread/java_thread_07.PNG' | relative_url }}" alt=""/>
 
-위 결과 요약을 보면 두 스레드가 동시에 데이터 요청을 하며 메인에서는 이 두 작업을 모두 기다린 후 병합을 시작하는 모습을 볼 수 있다.
+위 결과를 보면 두 스레드가 동시에 데이터 요청을 하며 메인에서는 이 두 작업을 모두 기다린 후 병합을 시작하는 모습을 볼 수 있다.
 
 [예제 코드](https://github.com/kimseongje3111/ExampleCode/tree/master/Java/Java_05)
 
@@ -386,5 +386,5 @@ public static void main(String[] args) {    // 출력문 생략 ...
 - 그림/내용 참조  
 [사이트 1](https://limkydev.tistory.com/55)  
 [사이트 2](https://cornswrold.tistory.com/197)  
-[사이트 3](https://dailyworker.github.io/java-thread/)
+[사이트 3](https://dailyworker.github.io/java-thread/)  
 [사이트 4](https://soulduse.tistory.com/14)
