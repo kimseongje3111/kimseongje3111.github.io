@@ -1,5 +1,5 @@
 ---
-title: "[JAVA] Thread 2"
+title: "[JAVA] Thread 3"
 author: Seongje kim
 layout: post
 ---
@@ -56,13 +56,12 @@ public class UnsafeSequence {
 }
 ```
 
-getNext(),getPrev() 메서드가 각각 value 값을 증가, 감소시켜 반환하는 것은 사실 3개의 명령으로 이루어진다.
-
+getNext(),getPrev() 메서드가 각각 value 값을 증가, 감소시켜 반환하는 것은 사실 3개의 명령으로 이루어진다.  
 1. value 값 읽기  
 2. 값 연산  
 3. value에 저장
 
-<img src="{{ 'assets/images/java/thread/java_thread_07.png' | relative_url }}" alt=""/>
+<img src="{{ 'assets/images/java/thread/java_thread_08.png' | relative_url }}" alt=""/>
 
 하지만 위 그림의 예시와 같이 value가 공유 변수일 경우 문제가 발생할 수 있다.
 각 스레드의 작업인 Task A, Task B의 수행을 통해 의도한 동작 결과는 value 값이 9가 되어야 하지만 스레드의 접근 시점에 따라 예상과는 다른 결과를 유발할 수 있다.
@@ -94,7 +93,6 @@ synchronized (lock) {	// lock은 보호할 객체의 참조 값
 		단일 연산으로 만드려는 코드 블록
 	*/
 }
-
 ```
 
 > 메서드 선언부에 지정된 ***synchronized*** 키워드는 해당 메서드 내부의 전체 코드를 포함하며 이 메서드를 포함한 클래스의 인스턴스를 락으로 사용함을 의미
@@ -104,6 +102,7 @@ Java에서 락은 상호 배제(***Mutex***)를 기반으로 동작하기 때문
 결과적으로 ***synchronized*** 키워드를 통한 동기화를 적용하여 공유 자원 접근에 대한 관리와 정확한 동작 결과를 보장할 수 있다.
 
 ### 경쟁 상태 예시 (2) : 상태가 없는 경우  
+
 
 ```
 public class StatelessFactorizer implements Servlet {
@@ -121,6 +120,7 @@ public class StatelessFactorizer implements Servlet {
 그러므로 위 메서드를 실행하는 스레드는 서로 상태를 공유하지 않으며, 상태가 없는 객체는 항상 스레드 안정성을 보장한다.
 
 ### 경쟁 상태 예시 (3) : 상태가 1개인 경우 (Atomic 클래스를 통한 해결)
+
 
 ```
 public class CountingFactorizer implements Servlet {
@@ -142,7 +142,7 @@ public class CountingFactorizer implements Servlet {
 
 그렇다면 상태가 여러 개인 경우에도 Atomic 클래스를 이용해 해결할 수 있을까?
 
-아니다. 상태가 여러 개라면 일관성을 유지하기 위해 관련 변수들을 하나의 단일 연산으로 갱신해야 한다.
+아니다. 상태가 여러 개라면 일관성을 유지하기 위해 관련 변수들을 하나의 단일 연산으로 갱신해야 한다.  
 이때 필요한 것이 바로 '***synchronized***'이다.
 
 ```
