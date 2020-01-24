@@ -39,8 +39,7 @@ layout: post
 이를 스레드 관점으로 표현한다면 작업 A를 실행 중인 스레드 입장에서 작업 B를 실행 중인 다른 스레드를 볼 때 작업 B가 모두 수행됐거나 전혀 수행되지 않은 상태로 파악된다면 작업 B는 단일 연산이라고 말한다. 즉, 어떤 작업이 단일 연산을 보장한다면 해당 작업을 수행하는 동안 동시에 다른 스레드의 접근이 불가함을 뜻한다.
 
 ### 경쟁 상태 예시 (1) : 스레드의 타이밍에 따라 결과가 달라지는 경우  
-
-
+</br>
 ```
 public class UnsafeSequence {
 
@@ -56,7 +55,8 @@ public class UnsafeSequence {
 }
 ```
 
-getNext(),getPrev() 메서드가 각각 value 값을 증가, 감소시켜 반환하는 것은 사실 3개의 명령으로 이루어진다.  
+getNext(),getPrev() 메서드가 각각 value 값을 증가, 감소시켜 반환하는 것은 사실 3개의 명령으로 이루어진다.
+
 1. value 값 읽기  
 2. 값 연산  
 3. value에 저장
@@ -102,8 +102,7 @@ Java에서 락은 상호 배제(***Mutex***)를 기반으로 동작하기 때문
 결과적으로 ***synchronized*** 키워드를 통한 동기화를 적용하여 공유 자원 접근에 대한 관리와 정확한 동작 결과를 보장할 수 있다.
 
 ### 경쟁 상태 예시 (2) : 상태가 없는 경우  
-
-
+</br>
 ```
 public class StatelessFactorizer implements Servlet {
 	
@@ -120,8 +119,7 @@ public class StatelessFactorizer implements Servlet {
 그러므로 위 메서드를 실행하는 스레드는 서로 상태를 공유하지 않으며, 상태가 없는 객체는 항상 스레드 안정성을 보장한다.
 
 ### 경쟁 상태 예시 (3) : 상태가 1개인 경우 (Atomic 클래스를 통한 해결)
-
-
+</br>
 ```
 public class CountingFactorizer implements Servlet {
 	private final AtomicLong count = new AtomicLong(0);
