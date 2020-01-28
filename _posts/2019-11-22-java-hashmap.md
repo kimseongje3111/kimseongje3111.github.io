@@ -7,14 +7,18 @@ layout: post
     blockquote {
         font-size:12pt;
 		padding-bottom:0.1px;
-        margin-bottom:40px;
+        margin-bottom:30px;
     }
 
 	img {
 		margin-left:15px;
 		margin-right:30px;
-		max-width:100%;
+		max-width:95%;
 		heght:auto;
+	}
+
+	h3 {
+		margin-bottom:15px;
 	}
 </style>
 
