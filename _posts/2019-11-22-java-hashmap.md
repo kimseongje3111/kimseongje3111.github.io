@@ -100,7 +100,6 @@ static class Entry<K,V> implements Map.Entry<K,V> {
 이제 ***HashMap***의 정의를 보자.
 
 > ***HashMap***
-
 >> 키(***Key***)에 대한 해시(***Hash***) 값을 사용하여 값(***Value***)을 저장 및 조회하고, 키-값 쌍의 개수에 따라 동적으로 크기가 증가하는 '***Associate Array***' (***Map, Dictionary, Symbol Table*** 등)
 
 수학적으로 보면 정의역인 키의 집합과 공역인 값의 집합의 대응 관계에서 해시 함수를 이용하는 것이다.
