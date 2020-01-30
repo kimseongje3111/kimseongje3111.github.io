@@ -5,7 +5,7 @@ layout: post
 ---
 <style>
     blockquote {
-        font-size:12pt;
+        font-size:13pt;
 		padding-bottom:0.1px;
         margin-bottom:30px;
     }
