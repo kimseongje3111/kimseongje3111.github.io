@@ -22,8 +22,9 @@ layout: post
 	}
 </style>
 
-이번 포스트의 주제는 이전 포스트에 이어서 Java 상속과 관련된 추상 클래스와 인터페이스에 대한 내용입니다.  
-다음은 이전 포스트 링크입니다. [Inheritance 1](https://kimseongje3111.github.io/2019/11/28/java-inheritance1.html)
+이번 포스트의 주제는 이전 포스트에 이어서 Java 상속과 관련된 추상 클래스와 인터페이스에 대한 내용입니다.
+아래는 이전 포스트 링크입니다.  
+[(Java) Inheritance 1](https://kimseongje3111.github.io/2019/11/28/java-inheritance1.html)
 
 ## 추상(Abstract) 클래스
 ---
@@ -237,7 +238,7 @@ C 클래스 객체인 obj_I1의 데이터 타입을 I1으로 한다는 것은 C 
 감사합니다.
 
 - 그림/내용 참조  
-[사이트 1](https://yaboong.github.io/java/2018/09/25/interface-vs-abstract-in-java8/)  
-[사이트 2](https://opentutorials.org/module/516/6127)  
-[사이트 3](https://docs.oracle.com/javase/tutorial/java/IandI/createinterface.html)  
-[사이트 4](https://itewbm.tistory.com/entry/%EC%B6%94%EC%83%81%ED%81%B4%EB%9E%98%EC%8A%A4abstract-class%EC%9D%98-%EC%A1%B4%EC%9E%AC-%EC%9D%B4%EC%9C%A0)
+[자바 8 에서 인터페이스와 추상클래스의 차이 (YABOONG)](https://yaboong.github.io/java/2018/09/25/interface-vs-abstract-in-java8/)  
+[다형성 (Opentutorials)](https://opentutorials.org/module/516/6127)  
+[The Java™ Tutorials - Interfaces and Inheritance](https://docs.oracle.com/javase/tutorial/java/IandI/createinterface.html)  
+[추상클래스(abstract class)의 존재 이유](https://itewbm.tistory.com/entry/%EC%B6%94%EC%83%81%ED%81%B4%EB%9E%98%EC%8A%A4abstract-class%EC%9D%98-%EC%A1%B4%EC%9E%AC-%EC%9D%B4%EC%9C%A0)

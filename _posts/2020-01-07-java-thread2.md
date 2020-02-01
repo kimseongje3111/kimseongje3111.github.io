@@ -23,7 +23,7 @@ layout: post
 </style>
 
 지난 포스트에서 이어서 Java의 스레드에 대한 내용입니다. 아래는 스레드 1부 포스트입니다.  
-[Thread 1](https://kimseongje3111.github.io/2020/01/03/java-thread1.html)
+[(Java) Thread 1](https://kimseongje3111.github.io/2020/01/03/java-thread1.html)
 
 ## 멀티 스레드
 ---
@@ -389,7 +389,7 @@ public static void main(String[] args) {    // 출력문 생략 ...
 감사합니다.
 
 - 그림/내용 참조  
-[사이트 1](https://limkydev.tistory.com/55)  
-[사이트 2](https://cornswrold.tistory.com/197)  
-[사이트 3](https://dailyworker.github.io/java-thread/)  
-[사이트 4](https://soulduse.tistory.com/14)
+[Thread Pool (스레드 풀) (LimKy 삽질블로그)](https://limkydev.tistory.com/55)  
+[스레드풀 생성, 종료 및 작업 처리 (스레드풀_1) (평범한개발자노트)](https://cornswrold.tistory.com/197)  
+[Java Thread - 자바 쓰레드 (Sean Sin)](https://dailyworker.github.io/java-thread/)  
+[Callable과 Thread (프로그래밍좀비)](https://soulduse.tistory.com/14)

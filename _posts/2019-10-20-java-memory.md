@@ -253,7 +253,8 @@ public static void main(String[] args) {
 ***Mark***는 ***GC***가 스택 영역의 모든 변수를 스캔하면서 각각 어떤 객체를 참조하고 있는지 찾는 과정이다. 이 작업을 위해 모든 스레드는 일시 중단되는데 이를 ***Stop the world***라고 부르기도 한다.
 그리고 ***Sweep***은 ***Marking*** 되어있지 않은 모든 객체들을 힙 영역에서 제거하는 과정이다.
 
-아래는 GC의 간단한 과정을 설명하기 위해 구성요소들을 표현한 것이다.
+아래는 GC의 간단한 과정을 설명하기 위해 구성 요소들을 표현한 것이다.  
+(Java 8 부터 ***Permanent Generation*** 영역은 ***Metaspace*** 으로 변경)
 
 <img src="{{ 'assets/images/java/memory/java_memory_07.png' | relative_url }}" alt=""/>
 
@@ -272,5 +273,5 @@ public static void main(String[] args) {
 이것으로 이번 포스트를 마무리하겠습니다. 감사합니다.
 
 - 그림/내용 참조  
-[사이트 1](https://aljjabaegi.tistory.com/387)  
-[사이트 2](https://yaboong.github.io/java/2018/06/09/java-garbage-collection/)
+[알기쉽게 정리한 JAVA의 컴파일과정 및 JVM 메모리 구조, JVM GC (알짜배기 프로그래머)](https://aljjabaegi.tistory.com/387)  
+[자바 메모리 관리 - 가비지 컬렉션 (YABOONG)](https://yaboong.github.io/java/2018/06/09/java-garbage-collection/)

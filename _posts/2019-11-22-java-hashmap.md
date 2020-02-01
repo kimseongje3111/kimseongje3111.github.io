@@ -266,5 +266,5 @@ Java 8에서는 ***Entry*** 클래스와 내용이 같은 ***Node*** 클래스�
 이것으로 이번 포스트를 마무리하겠습니다. 감사합니다.
 
 - 그림/내용 참조  
-[사이트 1](https://d2.naver.com/helloworld/831311)  
-[사이트 2](https://www.opentutorials.org/course/1223/6446)
+[Java HashMap은 어떻게 동작하는가? (Naver D2)](https://d2.naver.com/helloworld/831311)  
+[Collections Framework (생활코딩)](https://www.opentutorials.org/course/1223/6446)

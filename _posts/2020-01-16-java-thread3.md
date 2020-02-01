@@ -23,8 +23,8 @@ layout: post
 </style>
 
 지난 포스트에서 이어서 Java의 스레드에 대한 마지막 내용입니다. 아래는 스레드 1,2부 포스트입니다.  
-[Thread 1](https://kimseongje3111.github.io/2020/01/03/java-thread1.html)  
-[Thread 2](https://kimseongje3111.github.io/2020/01/07/java-thread2.html)
+[(Java) Thread 1](https://kimseongje3111.github.io/2020/01/03/java-thread1.html)  
+[(Java) Thread 2](https://kimseongje3111.github.io/2020/01/07/java-thread2.html)
 
 ## 스레드 동기화(Synchronization)
 ---
@@ -395,7 +395,7 @@ public class SharedObject {
 감사합니다.
 
 - 그림/내용 참조  
-[사이트 1](https://parkcheolu.tistory.com/16?category=654619)  
-[사이트 2](https://parkcheolu.tistory.com/14)  
-[사이트 3](https://dailyworker.github.io/java-thread/)  
-[사이트 4](https://blog.naver.com/jjoommnn/130037479493)
+[자바 volatile 키워드 (박철우의 블로그)](https://parkcheolu.tistory.com/16?category=654619)  
+[자바 메모리 모델 (박철우의 블로그)](https://parkcheolu.tistory.com/14)  
+[Java Thread - 자바 쓰레드 (Sean Sin)](https://dailyworker.github.io/java-thread/)  
+[Memory Visibility(메모리 가시성) 와 Memory Barrier(메모리 장벽) (백발의 개발자, 쫌조)](https://blog.naver.com/jjoommnn/130037479493)

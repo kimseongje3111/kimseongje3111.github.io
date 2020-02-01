@@ -152,6 +152,6 @@ MyThread1 클래스는 ***Thread*** 클래스를 상속하였고, MyThread2 클�
 이것으로 Java 스레드 1부 포스트를 마치겠습니다. 감사합니다.
 
 - 그림/내용 참조  
-[사이트 1](https://dailyworker.github.io/java-thread/)  
-[사이트 2](https://raccoonjy.tistory.com/15)  
-[사이트 3](https://gmlwjd9405.github.io/2018/09/14/process-vs-thread.html)
+[Java Thread - 자바 쓰레드 (Sean Sin)](https://dailyworker.github.io/java-thread/)  
+[자바(Java)의 기초 박살내기 - 스레드(Thread) (너굴너굴 조재연의 프로그래밍)](https://raccoonjy.tistory.com/15)  
+[프로세스와 스레드의 차이 (heejeong Kwon)](https://gmlwjd9405.github.io/2018/09/14/process-vs-thread.html)
