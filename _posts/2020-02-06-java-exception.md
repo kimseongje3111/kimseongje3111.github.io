@@ -69,13 +69,13 @@ layout: post
 이 예외들은 컴파일 단계에서 명확한 확인이 가능하기 때문에 만일 예외를 처리하지 않는다면 컴파일 시 오류가 발생한다.
 대표적으로 ***I/O, SQL Exception*** 등이 있다.
 
-추가적으로 중요한 점은 '예외 발생시 트랜잭션(***Transaction***)의 ***Roll-back*** 여부' 에 대해서도 차이가 있다는 것이다.
+또한 두 예외는 '예외 발생시 트랜잭션(***Transaction***)의 ***Roll-back*** 여부' 에 대해서도 차이가 있다.
 '트랜잭션' 이란 하나의 작업 단위를 뜻한다.
 이 트랜잭션을 처리하는 과정에서 예외가 발생했을 때, 작업의 모든 단계를 취소하고 작업을 초기화하는 것이 바로 '***Roll-back***' 이다.
 기본적으로 ***Checked Exception*** 은 예외가 발생하면 트랜잭션을 ***Roll-back*** 하지 않고 예외를 던져준다.
 하지만 ***Unchecked Exception*** 은 예외 발생 시 트랜잭션을 ***Roll-back*** 한다는 점에서 차이가 있다.
 
-트랜잭션을 어떻게 묶어놓는가 즉, 전파 방식(***Propagation Behavior***)에 따라 ***Checked Exception*** 과 ***Unchecked Exception*** 의 차이가 미치는 영향을 알아야한다.
+추가적으로 트랜잭션을 어떻게 묶어놓는가 즉, 전파 방식(***Propagation Behavior***)에 따라 ***Checked Exception*** 과 ***Unchecked Exception*** 의 차이가 미치는 영향을 알아야한다.
 결과적으로 트랜잭션의 전파 방식과 예외에 따라 작업이 ***Roll-back*** 되는 범위가 달라지기 때문에 개발자가 이를 인지하지 못한다면 실행 결과가 맞지 않거나 예상치 못한 예외가 발생할 수 있다.
 그러므로 이를 인지하고 트랜잭션을 적용시킬 때, 전파 방식 및 ***Roll-back*** 규칙을 적절히 사용하면 더욱 효율적이고 안전한 애플리케이션을 구현할 수 있을 것이다.
 
@@ -84,11 +84,7 @@ layout: post
 |예외 처리 여부||반드시 예외 처리 필요||명시적인 처리를 강제하지 않음|
 |확인 시점||컴파일 단계||실행 단계|
 |트랜잭션 처리||Roll-back : O||Roll-back : X|
-|대표 예시||IOException  
-SQLException||NullPointerException  
-IllegalArgumentException  
-IndexOutOfBoundException  
-SystemException|
+|대표 예시||IOException, SQLException||NullPointerException, IllegalArgumentException, IndexOutOfBoundException, SystemException|
 
 ## 예외 처리 방법
 ---
