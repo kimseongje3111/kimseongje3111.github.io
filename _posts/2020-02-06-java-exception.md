@@ -80,8 +80,8 @@ layout: post
 그러므로 이를 인지하고 트랜잭션을 적용시킬 때, 전파 방식 및 ***Roll-back*** 규칙을 적절히 사용하면 더욱 효율적이고 안전한 애플리케이션을 구현할 수 있을 것이다.
 
 |구분||Checked Exception||UnChecked Exception|
-|-----||-----||-----|
-|예외 처리 여부||반드시 예외 처리 필요||명시적인 처리를 강제하지 않음|
+|:-------:||:-------:||:-------:|
+|예외 처리||반드시 처리 필요||명시적인 처리를 강제하지 않음|
 |확인 시점||컴파일 단계||실행 단계|
 |트랜잭션 처리||Roll-back : O||Roll-back : X|
 |대표 예시||IOException, SQLException||NullPointerException, IllegalArgumentException, IndexOutOfBoundException, SystemException|
