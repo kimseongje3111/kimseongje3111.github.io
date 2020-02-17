@@ -1,13 +1,15 @@
 ---
 layout: default
 ---
+{%- assign category = page.category | default: page.title -%}
+{%- assign _posts = site.categories[category]}
+{%- include header.html scrolly_nav=_posts -%}
 
 <div id="main">
   {%- if page.content != "" -%}
 		{%- include section.html title=page.title photo=page.cover-photo photo-alt=page.cover-photo-alt auto-header=page.auto-header content=page.content -%}
 	{%- endif -%}
 
-  {%- assign category = page.category | default: page.title -%}
   {%- for _post in site.categories[category] -%}
     {%- capture _title -%}
       <a href="{{- _post.url | absolute_url -}}">{{- _post.title -}}</a>
