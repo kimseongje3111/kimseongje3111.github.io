@@ -1,7 +1,8 @@
 ---
 layout: default
 ---
-{%- assign _posts = site.posts | sort: 'date' | reverse -%}
+{%- assign category = page.category | default: page.title %}
+{%- assign _posts = site.categories[category] | sort: 'date' | reverse -%}
 {%- include header.html scrolly_nav=_posts -%}
 
 <div id="main">
@@ -10,7 +11,6 @@ layout: default
 	{%- endif -%}
 
   <ul class="posts-list">
-    {% assign category = page.category | default: page.title %}
     {% for post in site.categories[category] %}
       <li>
         <h3>
