@@ -41,10 +41,11 @@ public abstract class Vehicle {
 }
 
 public class Car extends Vehicle {
-  @Override
-  void move() {
-    System.out.println("Move Car!");
-  }
+
+  	@Override
+  	void move() {
+    	System.out.println("Move Car!");
+  	}
 }
 ```
 
@@ -82,14 +83,15 @@ public class Car extends Vehicle {
 
 ```
 public interface Vehicle {
-  void move();
+  	void move();
 }
 
 public class Car implements Vehicle {
-  @Override
-  public void move() {
-    System.out.println("Move Car!");
-  }
+
+  	@Override
+  	public void move() {
+    	System.out.println("Move Car!");
+  	}
 }
 ```
 
@@ -120,16 +122,16 @@ Java 8 부터 인터페이스는 상수로 선언된 변수를 사용 가능하�
 
 ```
 public interface Vehicle {
-  int A = 0;
-  void stop();
+  	int A = 0;
+  	void stop();
 
-  static void start() {
-    System.out.println("Start!");   // 재정의 불가
-  }
+  	static void start() {
+    	System.out.println("Start!");   // 재정의 불가
+  	}
 
 	default void move() {
-    System.out.println("Move!");    // 재정의 가능
-  }
+    	System.out.println("Move!");    // 재정의 가능
+  	}	
 }
 ```
 
@@ -195,6 +197,7 @@ interface I2 {
 }
 
 class C implements I1, I2{
+
     @Override
     public String A(){
         return "A";
@@ -207,6 +210,7 @@ class C implements I1, I2{
 }
 
 public class Main {
+
     public static void main(String[] args) {
         C obj_C = new C();
         I1 obj_I1 = new C();
