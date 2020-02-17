@@ -2,6 +2,8 @@
 title: "[JAVA] Memory structure"
 author: Seongje kim
 layout: post
+categories: [Java]
+tags: [Java]
 ---
 <style>
     blockquote {

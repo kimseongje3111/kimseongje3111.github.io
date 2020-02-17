@@ -2,6 +2,8 @@
 title: "[JAVA] HashMap"
 author: Seongje kim
 layout: post
+categories: [Java]
+tags: [Java]
 ---
 <style>
     blockquote {

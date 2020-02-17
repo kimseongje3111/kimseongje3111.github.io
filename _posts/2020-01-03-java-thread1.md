@@ -2,6 +2,8 @@
 title: "[JAVA] Thread 1"
 author: Seongje kim
 layout: post
+categories: [Java]
+tags: [Java]
 ---
 <style>
     blockquote {
