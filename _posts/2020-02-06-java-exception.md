@@ -2,6 +2,9 @@
 title: "[JAVA] Exception"
 author: Seongje kim
 layout: post
+comments: true
+categories: [Java]
+tags: [Java]
 ---
 <style>
     blockquote {
