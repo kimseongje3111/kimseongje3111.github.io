@@ -2,7 +2,7 @@
 layout: default
 ---
 {%- assign category = page.category | default: page.title -%}
-{%- assign _posts = site.categories[category]}
+{%- assign _posts = site.categories[category] -%}
 {%- include header.html scrolly_nav=_posts -%}
 
 <div id="main">
