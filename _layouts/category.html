@@ -12,7 +12,7 @@ layout: default
 
   <ul class="posts-list">
     {%- for cate in site.categories -%}
-      {%- if cate[0] == category -%}
+      {%- if cate[0] == page.title -%}
         {%- for post in cate[1] -%}
           <li>
             <h3>
