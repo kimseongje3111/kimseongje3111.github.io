@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-{%- assign _category = site.categories -%}
-{%- assign _posts = _category[1] | sort: 'date' | reverse -%}
+{%- assign category = page.category | default: page.title -%}
+{%- assign _posts = site.categories[category] | sort: 'date' | reverse -%}
 {%- include header.html scrolly_nav=_posts -%}
 
 <div id="main">
@@ -10,17 +10,17 @@ layout: default
 		{%- include section.html title=page.title photo=page.cover-photo photo-alt=page.cover-photo-alt auto-header=page.auto-header content=page.content -%}
 	{%- endif -%}
 
-  {%- for _post in _posts -%}
-    {%- capture _title -%}
-      <a href="{{- _post.url | absolute_url -}}">{{- _post.title -}}</a>
-    {%- endcapture -%}
-    {%- capture _subtitle -%}
-      {% if _post.author -%}{{- _post.author }} | {% endif %}
-      {{- _post.date | date_to_long_string -}}
-    {%- endcapture -%}
-    {%- capture _excerpt -%}<p>{{- _post.excerpt | strip_html | truncatewords: 100 -}}</p>{%- endcapture -%}
-    {%- capture _link -%}<a href="{{- _post.url | absolute_url -}}">read more</a>{%- endcapture -%}
-    {%- assign _content = _excerpt | append: _link -%}
-    {%- include section.html title=_title subtitle=_subtitle content=_content -%}
-  {%- endfor -%}
+  <ul class="posts-list">
+    {%- for post in _posts -%}
+      <li>
+        <h3>
+          <a href="{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+          </a>
+          <small>{{ post.date | date_to_string }}</small>
+        </h3>
+      </li>
+    {%- endfor -%}
+
+  </ul>
 </div>
