@@ -10,10 +10,10 @@ layout: default
 		{%- include section.html title=page.title photo=page.cover-photo photo-alt=page.cover-photo-alt auto-header=page.auto-header content=page.content -%}
 	{%- endif -%}
 
-  {% for category in site.categories %}
-    <h3>{{ category[0] }}</h3>
+  {% for catego in site.categories %}
+    <h3>{{ catego[0] }}</h3>
     <ul>
-      {% for post in category[1] %}
+      {% for post in catego[1] %}
         <li><a href="{{ post.url }}">{{ post.title }}</a></li>
       {% endfor %}
     </ul>
