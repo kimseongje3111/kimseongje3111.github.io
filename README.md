@@ -1,3 +1,3 @@
-# My development blog
+# Seongje's Development Blog
 
-[Here is my Blog's Link](https://kimseongje3111.github.io/)
+[Here's my blog link](https://kimseongje3111.github.io/)
