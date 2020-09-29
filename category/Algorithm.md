@@ -1,5 +1,5 @@
 ---
 layout: category
 title: Algorithm
-order: 8
+order: 9
 ---
