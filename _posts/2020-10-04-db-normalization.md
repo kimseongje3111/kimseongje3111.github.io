@@ -41,10 +41,10 @@ tags: [Database]
 
 |OrderId(PK)||Name||Day||Item||Price||Info|
 |:---:||:---:||:---:||:---:||:---:||:---:|
-|1||kim||2020-10-05||book1||10000||computer|
-|2||Lee||2020-10-05||book1||10000||computer|
-|3||kim||2020-10-07||book2||15000||fiction|
-|4||Park||2020-10-08||book1||10000||computer|
+|1||Kim||2020-10-05||Book1||10000||Computer|
+|2||Lee||2020-10-05||Book1||10000||Computer|
+|3||Kim||2020-10-07||Book2||15000||Fiction|
+|4||Park||2020-10-08||Book1||10000||Computer|
 
 위와 같이 주문 테이블 있을 때, 상품에 대한 정보가 중복해서 저장되는 문제가 발생한다.
 또한 상품에 대한 추가적인 속성이 필요하다면 모든 로우에 데이터를 추가해야 상황이 된다.
@@ -52,15 +52,15 @@ tags: [Database]
 
 |OrderId(PK)||Name||Day||ItemId(FK)|
 |:---:||:---:||:---:||:---:|
-|1||kim||2020-10-05||1|
+|1||Kim||2020-10-05||1|
 |2||Lee||2020-10-05||1|
-|3||kim||2020-10-07||2|
+|3||Kim||2020-10-07||2|
 |4||Park||2020-10-08||1|
 
 |ItemId(PK)||ItemName||Price||Info|
 |:---:||:---:||:---:||:---:|
-|1||book1||10000||computer|
-|2||book2||15000||fiction|
+|1||Book1||10000||Computer|
+|2||Book2||15000||Fiction|
 
 ### 2차 정규화  
 
@@ -69,9 +69,9 @@ tags: [Database]
 
 |OrderId(PK,FK)||ItemId(PK,FK)||Quantity||Payment||Stock|
 |:---:||:---:||:---:||:---:||:---:|
-|1||1||3||card||5000|
-|1||2||5||card||3000|
-|2||1||10||deposit||5000|
+|1||1||3||Card||5000|
+|1||2||5||Card||3000|
+|2||1||10||Deposit||5000|
 
 만일 위와 같은 주문 상세 테이블이 주문 테이블과 상품 테이블 사이에 추가되어 일대다-다대일 관계를 형성할 경우, 재고(***Stock***) 속성은 상품 테이블에 대해서만 종속되어 있기 때문에 중복 데이터에 대한 저장소의 낭비뿐만 아니라 데이터 입력/수정/삭제로 인한 데이터 불일치 문제가 발생할 수 있다.
 따라서 재고 속성을 상품 테이블에 추가하여 주문 상세 테이블을 관리함으로써 이러한 문제들을 방지한다.
@@ -83,9 +83,9 @@ tags: [Database]
 
 |UserId||Name||City||Street||ZipCode|
 |:---:||:---:||:---:||:---:|
-|1||kim||seoul||gangnam-daero||06038|
-|2||Lee||seoul||gangnam-daero||06038|
-|3||Park||deajeon||Taepyeongro||34888|
+|1||Kim||Seoul||Gangnam-daero||06038|
+|2||Lee||Seoul||Gangnam-daero||06038|
+|3||Park||Deajeon||Taepyeongro||34888|
 
 위 테이블에서 볼 수 있듯이, ***City, Street***는 다른 일반 속성인 ***ZipCode***에 의해 결정되는 속성들이기 때문에 이들을 분리하여 새로운 테이블로 관리하여 불필요한 데이터 중복을 방지한다.
 
@@ -97,7 +97,7 @@ tags: [Database]
 
 |StudentId||Subject||Professor||Score|
 |:---:||:---:||:---:||:---:|
-|1||CS001||kim||A|
+|1||CS001||Kim||A|
 |2||CS002||Lee||B|
 |3||CS002||Lee||A|
 
@@ -116,5 +116,5 @@ tags: [Database]
 
 |Professor(PK)||Subject|
 |:---:||:---:|
-|kim||CS001|
+|Kim||CS001|
 |Lee||CS002|
