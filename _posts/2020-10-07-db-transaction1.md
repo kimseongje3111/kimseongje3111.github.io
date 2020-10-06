@@ -109,6 +109,5 @@ tags: [Database]
 
 ***
 
-- 그림/내용 참조
-
+- 그림/내용 참조  
 [트랜잭션(transaction)과 ACID 특성을 보장하는 방법 (victolee의 블로그)](https://victorydntmd.tistory.com/129)
