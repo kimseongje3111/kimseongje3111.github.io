@@ -103,11 +103,12 @@ tags: [Database]
 ***2PL*** 프로토콜의 목적은 이 확장 단계와 축소 단계가 섞이지 않게 하는 것이다.
 즉, ***lock***과 ***unlock***이 번갈아 수행되지 않고, ***lock***이 모두 수행된 후 ***unlock***이 수행되어야 한다.
 
-<img src="{{ 'assets/images/db/db_transaction_01.png' | relative_url }}" alt=""/>
+<img src="{{ 'assets/images/db/db_transaction_01.PNG' | relative_url }}" alt=""/>
 
 결과적으로 트랜잭션 병렬 처리를 위한 직렬 가능성을 보장하면서 동시에 일관성과 독립성을 보장할 수 있게 된다.
 
 ***
 
 - 그림/내용 참조
-[[DB이론] 트랜잭션(transaction)과 ACID 특성을 보장하는 방법 (victolee의 블로그)](https://victorydntmd.tistory.com/129)
+
+[트랜잭션(transaction)과 ACID 특성을 보장하는 방법 (victolee의 블로그)](https://victorydntmd.tistory.com/129)
