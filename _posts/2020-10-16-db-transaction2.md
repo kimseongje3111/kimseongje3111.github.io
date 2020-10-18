@@ -127,7 +127,7 @@ REQUIRED 속성과 비슷하게 이미 시작된 부모 트랜잭션이 있다�
 트랜잭션의 격리 수준이 낮을수록 동시성이 증가하지만 데이터 무결성에 대한 문제가 발생할 수 있고, 높을수록 안전하지만 성능에 대한 비용이 증가한다.
 
 |ISOLATION LEVEL||DIRTY READ||NON-REPEATABLE READ||PHANTOM READ|
-|:------:||:------:||:------:||:------:|
+|:------:||:------:||------:||------:|
 |READ_UNCOMMITTED||O||O||O|
 |READ_COMMITTED||-||O||O|
 |REPEATABLE_READ||-||-||O|
