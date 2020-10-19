@@ -32,8 +32,7 @@ tags: [Database]
 
 ***DBMS***는 ***SQL*** 번역을 위한 ***DML/DDL*** 컴파일러, 번역된 ***SQL***을 처리하기 위한 질의 처리기, 트랜잭션 관리자, 저장 데이터 관리자 등으로 구성되어 있다.
 
->> 저장 데이터 관리자  
-디스크에 저장되어 있는 사용자 데이터베이스나 카탈로그 접근을 책임진다.
+> 저장 데이터 관리자 : 디스크에 저장되어 있는 사용자 데이터베이스나 카탈로그 접근을 책임진다.
 디스크에 저장되어 있는 레코드의 접근 요청은 먼저 파일 관리자에 의해 실제 디스크와 메인 메모리 버퍼 사이의 데이터 전송이 이루어지고, 이후 데이터 처리를 위한 작업은 버퍼 관리자에 의해 관리된다.
 
 ## 데이터베이스의 논리적/물리적 구조
@@ -82,5 +81,5 @@ tags: [Database]
 ***
 
 - 그림/내용 참조  
-(데이터베이스 구조와 스페이스 관리 - Ogamer OManager)[https://gostart.tistory.com/161]  
-(논리적 및 물리적 데이터베이스 구조 - scleemct2)[https://m.blog.naver.com/PostView.nhn?blogId=scleemct2&logNo=40156717945&proxyReferer=https:%2F%2Fwww.google.com%2F]
+[데이터베이스 구조와 스페이스 관리 - Ogamer OManager](https://gostart.tistory.com/161)  
+[논리적 및 물리적 데이터베이스 구조 - scleemct2](https://m.blog.naver.com/PostView.nhn?blogId=scleemct2&logNo=40156717945&proxyReferer=https:%2F%2Fwww.google.com%2F)
